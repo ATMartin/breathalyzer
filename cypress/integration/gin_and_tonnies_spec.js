@@ -104,10 +104,10 @@ describe('Update Drink Page', () => {
     cy.contains('Demo-licious Test Drink').parent().contains('Learn More').click();
     cy.url().should('include', '/drinks/');
     cy.get('h1#single-drink-title').contains('Demo-licious Test Drink');
+    cy.contains('Update This Drink').click();
   });
 
   it('Updates the drink', () => {
-    cy.contains('Update This Drink').click();
     cy.url().should('include', '/edit');
     cy.get('textarea.update-drink-content').type(' Here\'s an edit!');
     cy.contains('Update Drink').click();
@@ -200,6 +200,7 @@ describe('Delete Drink', () => {
     cy.contains('Demo-licious Test Drink').parent().contains('Learn More').click();
     cy.url().should('include', '/drinks/');
     cy.get('h1#single-drink-title').contains('Demo-licious Test Drink');
+    cy.contains('Update This Drink').click();
   });
 
   it('Deletes the drink', () => {
